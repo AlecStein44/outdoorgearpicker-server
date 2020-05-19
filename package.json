@@ -4,7 +4,7 @@
   "description": "Backend Sever for Outdoor Gear Picker",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "dev": "nodemon app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
