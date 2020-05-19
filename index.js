@@ -11,10 +11,10 @@ const headers = {Accept: 'application/json'}
 app.use(express.json());
 app.use(cors())
 
-
-app.listen(() => {
-    console.log(`Server listening at http://localhost:${port}`)
-})
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
+});
 
 
 app.get('/', (req, res) => {
