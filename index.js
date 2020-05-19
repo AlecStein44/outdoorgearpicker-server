@@ -17,6 +17,11 @@ app.listen(PORT, () => {
 })
 
 
+app.get('/', (req, res) => {
+   console.log('Server is running'
+})
+
+
 app.get('/guns', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='GUNS'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
