@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const port = 4000
+const port = 3000
 const request = require('request')
 const user = 'IRSYkqTyNep22276244pB9TuBUoBytYTN1'
 const password = '2GBhaG~vQWZBKpjTohvSJdracm~Sf9vh'
@@ -9,7 +9,6 @@ const url = 'http://' + user + ':' + password + '@api.impact.com'
 const headers = {Accept: 'application/json'}
 
 app.use(express.json());
-app.use(express.static('public'));
 app.use(cors())
 
 
