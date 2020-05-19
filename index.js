@@ -13,6 +13,11 @@ app.use(express.static('public'));
 app.use(cors())
 
 
+app.listen(PORT, () => {
+    console.log(`Server listening at http://localhost:${PORT}`)
+})
+
+
 app.get('/guns', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='GUNS'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -442,8 +447,6 @@ app.get('/test', (req, res) => {
     res.json('test')
 })
 
-
-app.listen(port, () => console.log(`App listening on port ${port}!`))
 
 /*const http = require('http');
 router.get('/impactApi', (req, res) => {
