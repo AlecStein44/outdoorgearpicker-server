@@ -9,6 +9,7 @@ const url = 'http://' + user + ':' + password + '@api.impact.com'
 const headers = {Accept: 'application/json'}
 
 app.use(express.json());
+app.use(express.static('public'));
 app.use(cors())
 
 
