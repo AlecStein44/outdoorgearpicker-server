@@ -28,6 +28,7 @@ app.get('/guns', (req, res) => {
             
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -38,6 +39,7 @@ app.get('/ammo', (req, res) => {
             
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -54,6 +56,7 @@ app.get('/scope', (req, res) => {
             }
             newBody.Items = newItems
             res.json(newBody)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -64,6 +67,7 @@ app.get('/sling', (req, res) => {
             
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -80,6 +84,7 @@ app.get('/bipod', (req, res) => {
             }
             newBody.Items = newItems
             res.json(newBody)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -90,6 +95,7 @@ app.get('/miscfirearm', (req, res) => {
             
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -100,6 +106,7 @@ app.get('/bow', (req, res) => {
             
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -116,6 +123,7 @@ app.get('/arrow', (req, res) => {
             }
             newBody.Items = newItems
             res.json(newBody)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -132,6 +140,7 @@ app.get('/broadhead', (req, res) => {
             }
             newBody.Items = newItems
             res.json(newBody)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -142,6 +151,7 @@ app.get('/miscarchery', (req, res) => {
             
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -152,6 +162,7 @@ app.get('/headwear', (req, res) => {
             
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -162,6 +173,7 @@ app.get('/covermask', (req, res) => {
             
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -172,6 +184,7 @@ app.get('/jacket', (req, res) => {
             
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -188,6 +201,7 @@ app.get('/shirt', (req, res) => {
             }
             newBody.Items = newItems
             res.json(newBody)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -204,6 +218,7 @@ app.get('/pants', (req, res) => {
             }
             newBody.Items = newItems
             res.json(newBody)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -214,6 +229,7 @@ app.get('/gaiter', (req, res) => {
             
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -224,6 +240,7 @@ app.get('/sock', (req, res) => {
             
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -234,6 +251,7 @@ app.get('/backpack', (req, res) => {
            
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -244,6 +262,7 @@ app.get('/binocularholder', (req, res) => {
             
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -260,6 +279,7 @@ app.get('/bladder', (req, res) => {
             }
             newBody.Items = newItems
             res.json(newBody)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -270,6 +290,7 @@ app.get('/binos', (req, res) => {
             
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -286,6 +307,7 @@ app.get('/spotting', (req, res) => {
             }
             newBody.Items = newItems
             res.json(newBody)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -296,6 +318,7 @@ app.get('/rangefinder', (req, res) => {
            
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -306,6 +329,7 @@ app.get('/processing', (req, res) => {
            
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -326,6 +350,7 @@ app.get('/replacementblades', (req, res) => {
             
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -336,6 +361,7 @@ app.get('/saw', (req, res) => {
             
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -346,6 +372,7 @@ app.get('/sheer', (req, res) => {
             
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -356,6 +383,7 @@ app.get('/gamebag', (req, res) => {
            
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -366,6 +394,7 @@ app.get('/gloves', (req, res) => {
           
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -376,6 +405,7 @@ app.get('/rope', (req, res) => {
           
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -386,6 +416,7 @@ app.get('/medical', (req, res) => {
            
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -396,6 +427,7 @@ app.get('/waterpurifier', (req, res) => {
            
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -406,6 +438,7 @@ app.get('/gps', (req, res) => {
            
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -416,6 +449,7 @@ app.get('/misc', (req, res) => {
            
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -427,6 +461,7 @@ app.get('/prevpage', (req, res) => {
             let newItems = JSON.parse(body)
             
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -437,6 +472,7 @@ app.get('/nextpage', (req, res) => {
             let newItems = JSON.parse(body)
             
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
