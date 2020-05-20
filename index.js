@@ -11,6 +11,8 @@ const headers = {Accept: 'application/json'}
 app.use(express.json());
 app.use(cors())
 
+const numViews = 0
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
@@ -18,7 +20,10 @@ app.listen(PORT, () => {
 
 
 app.get('/', (req, res) => {
-   console.log('Server is running')
+  
+  numViews++;
+  
+   console.log(numViews)
 })
 
 
