@@ -11,7 +11,7 @@ const headers = {Accept: 'application/json'}
 app.use(express.json());
 app.use(cors())
 
-const numViews = 0
+let numViews = 0
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
