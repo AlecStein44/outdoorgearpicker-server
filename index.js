@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 app.get('/guns', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='GUNS'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+            
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -35,7 +35,7 @@ app.get('/guns', (req, res) => {
 app.get('/ammo', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='AMMO'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+            
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -61,7 +61,7 @@ app.get('/scope', (req, res) => {
 app.get('/sling', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Nylon Sling'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+            
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -87,7 +87,7 @@ app.get('/bipod', (req, res) => {
 app.get('/miscfirearm', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='SHOOTING/GUN ACCESSORIES'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+            
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -97,7 +97,7 @@ app.get('/miscfirearm', (req, res) => {
 app.get('/bow', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Bow Package'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+            
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -139,7 +139,7 @@ app.get('/broadhead', (req, res) => {
 app.get('/miscarchery', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='ARCHERY'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+            
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -149,7 +149,7 @@ app.get('/miscarchery', (req, res) => {
 app.get('/headwear', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Caps'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+            
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -159,7 +159,7 @@ app.get('/headwear', (req, res) => {
 app.get('/covermask', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Masks'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+            
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -169,7 +169,7 @@ app.get('/covermask', (req, res) => {
 app.get('/jacket', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Jackets'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+            
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -211,7 +211,7 @@ app.get('/pants', (req, res) => {
 app.get('/gaiter', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Leg Gaiter'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+            
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -221,7 +221,7 @@ app.get('/gaiter', (req, res) => {
 app.get('/sock', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Wool Socks'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+            
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -231,7 +231,7 @@ app.get('/sock', (req, res) => {
 app.get('/backpack', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Manufacturer='Mystery Ranch'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+           
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -241,7 +241,7 @@ app.get('/backpack', (req, res) => {
 app.get('/binocularholder', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Binocular Holder'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+            
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -267,7 +267,7 @@ app.get('/bladder', (req, res) => {
 app.get('/binos', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Binoculars'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+            
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -293,7 +293,7 @@ app.get('/spotting', (req, res) => {
 app.get('/rangefinder', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Rangefinder'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+           
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -303,7 +303,7 @@ app.get('/rangefinder', (req, res) => {
 app.get('/processing', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Field Dressing Tools'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+           
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -313,7 +313,7 @@ app.get('/processing', (req, res) => {
 app.get('/knive', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='CUTLERY'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+            
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -323,7 +323,7 @@ app.get('/knive', (req, res) => {
 app.get('/replacementblades', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Replacement Blade'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+            
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -333,7 +333,7 @@ app.get('/replacementblades', (req, res) => {
 app.get('/saw', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Hand Saw'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+            
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -343,7 +343,7 @@ app.get('/saw', (req, res) => {
 app.get('/sheer', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Shear'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+            
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -353,7 +353,7 @@ app.get('/sheer', (req, res) => {
 app.get('/gamebag', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Game Bags'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+           
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -363,7 +363,7 @@ app.get('/gamebag', (req, res) => {
 app.get('/gloves', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Gloves'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+          
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -373,7 +373,7 @@ app.get('/gloves', (req, res) => {
 app.get('/rope', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Gambrels & Hoists'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+          
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -383,7 +383,7 @@ app.get('/rope', (req, res) => {
 app.get('/medical', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Survival/First Aid'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+           
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -393,7 +393,7 @@ app.get('/medical', (req, res) => {
 app.get('/waterpurifier', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Water Treatment'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+           
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -403,7 +403,7 @@ app.get('/waterpurifier', (req, res) => {
 app.get('/gps', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Handheld GPS'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+           
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -413,7 +413,7 @@ app.get('/gps', (req, res) => {
 app.get('/misc', (req, res) => {
     request({url: `${url}/Mediapartners/IRaQqFLucKLG163953CbkV6UeFC5k65535/Catalogs/4595`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body)
+           
             let newItems = JSON.parse(body)
             res.json(newItems)
         }
@@ -425,7 +425,7 @@ app.get('/prevpage', (req, res) => {
     request({url: `${url}${req.query.uri}&Query=${req.query.Query}`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
-            console.log(typeof newItems)
+            
             res.json(newItems)
         }
     });
@@ -435,7 +435,7 @@ app.get('/nextpage', (req, res) => {
     request({url: `${url}${req.query.uri}&AfterId=${req.query.AfterId}&Query=${req.query.Query}`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
-            console.log(typeof newItems)
+            
             res.json(newItems)
         }
     });
