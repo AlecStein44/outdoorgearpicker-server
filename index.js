@@ -459,6 +459,247 @@ app.get('/misc', (req, res) => {
     });
 })
 
+app.get('/hikinghat', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Hats'`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(body)
+            let newItems = JSON.parse(body)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/windbreaker', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Jackets'&pageSize=500`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newBody = JSON.parse(body)
+            let newItems = []
+           for(let i = 0; i < newBody.Items.length; i++) {
+                if(newBody.Items[i].Name.includes('Windbreaker')) {
+                    newItems.push(newBody.Items[i])
+                }
+            }
+            newBody.Items = newItems
+            res.json(newBody)
+        }
+    });
+})
+
+app.get('/hikingshirt', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Shirts'&pageSize=500`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newItems = JSON.parse(body)
+            console.log(newItems)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/hikingpants', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Pants'&pageSize=500`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newItems = JSON.parse(body)
+            console.log(newItems)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/hikingsock', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Hiking Socks'`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(body)
+            let newItems = JSON.parse(body)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/hikingboot', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Hiking'&pageSize=500`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newItems = JSON.parse(body)
+            console.log(newItems)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/hikingbackpack', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='PACKS AND BAGS'&pageSize=500`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newBody = JSON.parse(body)
+            let newItems = []
+           for(let i = 0; i < newBody.Items.length; i++) {
+                if(newBody.Items[i].Name.includes('Backpack')) {
+                    newItems.push(newBody.Items[i])
+                }
+            }
+            newBody.Items = newItems
+            res.json(newBody)
+        }
+    });
+})
+
+app.get('/headlamp', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Flashlights & Headlamps'&pageSize=500`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newItems = JSON.parse(body)
+            console.log(newItems)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/compass', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Compass'`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(body)
+            let newItems = JSON.parse(body)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/trekkingpoles', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Trekking Poles'`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(body)
+            let newItems = JSON.parse(body)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/essentialsmisc', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Camp Accessories'&pageSize=500`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newItems = JSON.parse(body)
+            console.log(newItems)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/firestarter', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Fire Starter'`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(body)
+            let newItems = JSON.parse(body)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/rod', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Spinning'&pageSize=500`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newItems = JSON.parse(body)
+            console.log(newItems)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/fishingline', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Catergory='Fishing > Fishing Line'&pageSize=500`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newItems = JSON.parse(body)
+            console.log(newItems)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/hook', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Circle & Octopus Hooks'&pageSize=500`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newItems = JSON.parse(body)
+            console.log(newItems)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/bait', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='Fishing > Fish Attractant & Bait'&pageSize=500`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newItems = JSON.parse(body)
+            console.log(newItems)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/lure', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='LURES'&pageSize=500`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newItems = JSON.parse(body)
+            console.log(newItems)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/pliers', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Pliers'&pageSize=500`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newItems = JSON.parse(body)
+            console.log(newItems)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/linecutter', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Clippers & Cutters'&pageSize=500`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newItems = JSON.parse(body)
+            console.log(newItems)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/bottle', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Water Bottles'&pageSize=500`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newItems = JSON.parse(body)
+            console.log(newItems)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/tacklebox', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name='Tackle Box'&pageSize=500`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newItems = JSON.parse(body)
+            console.log(newItems)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/wadder', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Fishing'&pageSize=500`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newItems = JSON.parse(body)
+            console.log(newItems)
+            res.json(newItems)
+        }
+    });
+})
+
+app.get('/shoe', (req, res) => {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Fishing/Water'&pageSize=500`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newItems = JSON.parse(body)
+            console.log(newItems)
+            res.json(newItems)
+        }
+    });
+})
 
 app.get('/prevpage', (req, res) => {
     request({url: `${url}${req.query.uri}&Query=${req.query.Query}`, headers: headers}, function (error, response, body) {
