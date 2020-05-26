@@ -465,6 +465,7 @@ app.get('/hikinghat', (req, res) => {
             console.log(body)
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -481,6 +482,7 @@ app.get('/windbreaker', (req, res) => {
             }
             newBody.Items = newItems
             res.json(newBody)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -489,8 +491,8 @@ app.get('/hikingshirt', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Shirts'&pageSize=500`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
-            console.log(newItems)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -499,8 +501,8 @@ app.get('/hikingpants', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Pants'&pageSize=500`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
-            console.log(newItems)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -511,6 +513,7 @@ app.get('/hikingsock', (req, res) => {
             console.log(body)
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -519,8 +522,8 @@ app.get('/hikingboot', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Hiking'&pageSize=500`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
-            console.log(newItems)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -537,6 +540,7 @@ app.get('/hikingbackpack', (req, res) => {
             }
             newBody.Items = newItems
             res.json(newBody)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -545,8 +549,8 @@ app.get('/headlamp', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Flashlights & Headlamps'&pageSize=500`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
-            console.log(newItems)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -557,6 +561,7 @@ app.get('/compass', (req, res) => {
             console.log(body)
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -567,6 +572,7 @@ app.get('/trekkingpoles', (req, res) => {
             console.log(body)
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -575,8 +581,8 @@ app.get('/essentialsmisc', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Camp Accessories'&pageSize=500`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
-            console.log(newItems)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -587,6 +593,7 @@ app.get('/firestarter', (req, res) => {
             console.log(body)
             let newItems = JSON.parse(body)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -595,8 +602,8 @@ app.get('/rod', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Spinning'&pageSize=500`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
-            console.log(newItems)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -605,8 +612,8 @@ app.get('/fishingline', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Catergory='Fishing > Fishing Line'&pageSize=500`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
-            console.log(newItems)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -615,8 +622,8 @@ app.get('/hook', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Circle & Octopus Hooks'&pageSize=500`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
-            console.log(newItems)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -625,8 +632,8 @@ app.get('/bait', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='Fishing > Fish Attractant & Bait'&pageSize=500`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
-            console.log(newItems)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -635,8 +642,8 @@ app.get('/lure', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='LURES'&pageSize=500`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
-            console.log(newItems)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -645,8 +652,8 @@ app.get('/pliers', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Pliers'&pageSize=500`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
-            console.log(newItems)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -655,8 +662,8 @@ app.get('/linecutter', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Clippers & Cutters'&pageSize=500`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
-            console.log(newItems)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -665,8 +672,8 @@ app.get('/bottle', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Water Bottles'&pageSize=500`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
-            console.log(newItems)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -675,8 +682,8 @@ app.get('/tacklebox', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name='Tackle Box'&pageSize=500`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
-            console.log(newItems)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -685,8 +692,8 @@ app.get('/wadder', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Fishing'&pageSize=500`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
-            console.log(newItems)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
@@ -695,8 +702,8 @@ app.get('/shoe', (req, res) => {
     request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Fishing/Water'&pageSize=500`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
-            console.log(newItems)
             res.json(newItems)
+            console.log('Get Was Successful')
         }
     });
 })
