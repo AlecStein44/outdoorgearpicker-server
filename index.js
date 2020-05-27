@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
                         db('types')
                             .insert([{
                                 type: guns,
-                                data: newItems
+                                data: JSON.stringify(newItems)
                             }])
                             .catch(error => {
                                 return res.json(error)
