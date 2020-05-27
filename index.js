@@ -64,16 +64,36 @@ app.get('/', (req, res) => {
         })
   })
   
-  app.get('/ammo', (req, res) => {
-      request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='AMMO'`, headers: headers}, function (error, response, body) {
-          if (!error && response.statusCode == 200) {
+ app.get('/ammo', (req, res) => {
+  db
+    .select('*')
+    .from('types')
+    .where({type: 'ammo'})
+    .then(typeData => {
+        if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='AMMO'`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                    db('types')
+                        .insert([{
+                            type: 'ammo',
+                            data: JSON.stringify(newItems)
+                        }])
+                        .catch(error => {
+                            return res.json(error)
+                        })
+                }
+            });
               
-              let newItems = JSON.parse(body)
-              res.json(newItems)
-              console.log('Get Was Successful')
-          }
-      });
-  })
+        } else {
+            res.json(typeData[0].data)
+            console.log('Get From Database Was Successful')
+        }
+    })
+})
   
   app.get('/scope', (req, res) => {
       request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='OPTICS'`, headers: headers}, function (error, response, body) {
