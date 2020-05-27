@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
         .where({type: 'guns'})
         .then(typeData => {
             console.log(typeData)
-            if (typeData === null) {
+            if (typeData.length === 0) {
                 request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='GUNS'`, headers: headers}, function (error, response, body) {
                     if (!error && response.statusCode == 200) {
                         
