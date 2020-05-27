@@ -58,6 +58,7 @@ app.get('/', (req, res) => {
                 });
                   
             } else {
+                console.log(typeof typeData)
                 res.json(typeData)
             }
         })
