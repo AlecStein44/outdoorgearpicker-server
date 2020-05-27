@@ -48,7 +48,7 @@ app.get('/', (req, res) => {
                         console.log('Get Was Successful')
                         db('types')
                             .insert([{
-                                type: guns,
+                                type: 'guns',
                                 data: JSON.stringify(newItems)
                             }])
                             .catch(error => {
