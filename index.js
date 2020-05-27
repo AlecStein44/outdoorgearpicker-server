@@ -58,7 +58,7 @@ app.get('/', (req, res) => {
                 });
                   
             } else {
-                res.json(typeData)
+                res.json(JSON.parse(typeData))
             }
         })
   })
