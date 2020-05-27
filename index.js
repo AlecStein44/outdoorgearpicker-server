@@ -48,8 +48,12 @@ app.get('/', (req, res) => {
                         console.log('Get Was Successful')
                         db('types')
                             .insert([{
-                                type: typeData
+                                type: guns,
+                                data: newItems
                             }])
+                            .catch(error => {
+                                return res.json(error)
+                            })
                     }
                 });
                   
