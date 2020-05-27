@@ -58,7 +58,8 @@ app.get('/', (req, res) => {
                 });
                   
             } else {
-                res.json(JSON.parse(typeData))
+                let final dataDB = JSON.parse(typeData)
+                res.json(dataDB)
             }
         })
   })
