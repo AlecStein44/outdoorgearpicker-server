@@ -171,24 +171,18 @@ app.get('/ammo', (req, res) => {
           if (typeData.length === 0) {
             request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Bipods'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
-                    let newBody = JSON.parse(body)
-                    let newItems = []
-                   for(let i = 0; i < newBody.Items.length; i++) {
-                        if(newBody.Items[i].Name.includes('Bipod')) {
-                            newItems.push(newBody.Items[i])
-                        }
-                    }
-                    newBody.Items = newItems
-                    res.json(newBody)
+                    
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
                     console.log('Get Was Successful')
-                     db('types')
-                          .insert([{
-                              type: 'bipod',
-                              data: JSON.stringify(newItems)
-                          }])
-                          .catch(error => {
-                              return res.json(error)
-                          })
+                    db('types')
+                        .insert([{
+                            type: 'bipod',
+                            data: JSON.stringify(newItems)
+                        }])
+                        .catch(error => {
+                            return res.json(error)
+                        })
                 }
             });
           } else {
