@@ -1864,6 +1864,7 @@ app.get('/ammo', (req, res) => {
                 
           } else {
               res.json(typeData[0].data)
+              console.log(typeData[0].data)
               console.log('Get From Database Was Successful')
           }
       })
