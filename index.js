@@ -583,6 +583,37 @@ app.get('/ammo', (req, res) => {
           }
       })
   })
+
+app.get('/boot', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'boot'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Lables='Boots'`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'boot',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
   
   app.get('/backpack', (req, res) => {
     db
