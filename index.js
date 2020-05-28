@@ -184,7 +184,7 @@ app.get('/ammo', (req, res) => {
                     db('types')
                                 .insert([{
                                     type: 'bipod',
-                                    data: JSON.stringify(newItems[0])
+                                    data: JSON.stringify(newItems)
                                 }])
                                 .catch(error => {
                                     return res.json(error)
@@ -192,7 +192,7 @@ app.get('/ammo', (req, res) => {
                 }
             });
           } else {
-              res.json(typeData[0].data)
+              res.json(typeData.data)
               console.log('Get From Database Was Successful')
           }
       })
