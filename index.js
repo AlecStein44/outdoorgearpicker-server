@@ -591,7 +591,7 @@ app.get('/boot', (req, res) => {
       .where({type: 'boot'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Lables='Boots'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Hunting'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     
                     let newItems = JSON.parse(body)
