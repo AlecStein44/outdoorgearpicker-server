@@ -184,7 +184,7 @@ app.get('/ammo', (req, res) => {
                     db('types')
                                 .insert([{
                                     type: 'bipod',
-                                    data: JSON.stringify(newItems)
+                                    data: JSON.stringify(newItems.data)
                                 }])
                                 .catch(error => {
                                     return res.json(error)
