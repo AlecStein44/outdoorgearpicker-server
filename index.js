@@ -181,18 +181,18 @@ app.get('/ammo', (req, res) => {
                     newBody.Items = newItems
                     res.json(newBody)
                     console.log('Get Was Successful')
-                    db('types')
-                                .insert([{
-                                    type: 'bipod',
-                                    data: JSON.stringify(newItems.data)
-                                }])
-                                .catch(error => {
-                                    return res.json(error)
-                  })
+                     db('types')
+                          .insert([{
+                              type: 'bipod',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
                 }
             });
           } else {
-              res.json(typeData.data)
+              res.json(typeData[0].data)
               console.log('Get From Database Was Successful')
           }
       })
