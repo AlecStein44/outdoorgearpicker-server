@@ -1396,7 +1396,7 @@ app.get('/boot', (req, res) => {
                       db('types')
                           .insert([{
                               type: 'hikingbackpack',
-                              data: JSON.stringify(newItems)
+                              data: JSON.stringify(newBody)
                           }])
                           .catch(error => {
                               return res.json(error)
