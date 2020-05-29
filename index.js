@@ -684,17 +684,11 @@ app.get('/boot', (req, res) => {
       .where({type: 'bladder'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='PACKS AND BAGS'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='Camping  >  Backpacks %26 Bags  >  Hydration Packs'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
-                    let newBody = JSON.parse(body)
-                    let newItems = []
-                   for(let i = 0; i < newBody.Items.length; i++) {
-                        if(newBody.Items[i].Name.includes('Hydration Reservoir')) {
-                            newItems.push(newBody.Items[i])
-                        }
-                    }
-                    newBody.Items = newItems
-                    res.json(newBody)
+                    
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
                     console.log('Get Was Successful')
                       db('types')
                           .insert([{
