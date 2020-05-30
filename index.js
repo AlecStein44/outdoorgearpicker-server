@@ -117,7 +117,7 @@ app.get('/ammo', (req, res) => {
                     db('types')
                                 .insert([{
                                     type: 'scope',
-                                    data: JSON.stringify(newItems)
+                                    data: JSON.stringify(newBody)
                                 }])
                                 .catch(error => {
                                     return res.json(error)
@@ -276,7 +276,7 @@ app.get('/ammo', (req, res) => {
                     db('types')
                                 .insert([{
                                     type: 'arrow',
-                                    data: JSON.stringify(newItems)
+                                    data: JSON.stringify(newBody)
                                 }])
                                 .catch(error => {
                                     return res.json(error)
@@ -312,7 +312,7 @@ app.get('/ammo', (req, res) => {
                     db('types')
                                 .insert([{
                                     type: 'broadhead',
-                                    data: JSON.stringify(newItems)
+                                    data: JSON.stringify(newBody)
                                 }])
                                 .catch(error => {
                                     return res.json(error)
@@ -472,7 +472,7 @@ app.get('/ammo', (req, res) => {
                     db('types')
                                 .insert([{
                                     type: 'Shirt',
-                                    data: JSON.stringify(newItems)
+                                    data: JSON.stringify(newBody)
                                 }])
                                 .catch(error => {
                                     return res.json(error)
@@ -508,7 +508,7 @@ app.get('/ammo', (req, res) => {
                     db('types')
                                 .insert([{
                                     type: 'pants',
-                                    data: JSON.stringify(newItems)
+                                    data: JSON.stringify(newBody)
                                 }])
                                 .catch(error => {
                                     return res.json(error)
@@ -761,7 +761,7 @@ app.get('/boot', (req, res) => {
                       db('types')
                           .insert([{
                               type: 'spotting',
-                              data: JSON.stringify(newItems)
+                              data: JSON.stringify(newBody)
                           }])
                           .catch(error => {
                               return res.json(error)
@@ -1232,7 +1232,7 @@ app.get('/boot', (req, res) => {
                       db('types')
                           .insert([{
                               type: 'windbreaker',
-                              data: JSON.stringify(newItems)
+                              data: JSON.stringify(newBody)
                           }])
                           .catch(error => {
                               return res.json(error)
