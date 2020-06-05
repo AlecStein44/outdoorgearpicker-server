@@ -1881,12 +1881,601 @@ app.get('/boot', (req, res) => {
           }
       })
   })
+
+  app.get('/tent', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'tent'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+              request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='TENTS'`, headers: headers}, function (error, response, body) {
+                  if (!error && response.statusCode == 200) {
+                      
+                      let newItems = JSON.parse(body)
+                      res.json(newItems)
+                      console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'tent',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+  app.get('/tarp', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'tarp'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Tarp'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'tarp',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+  app.get('/stakes', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'stakes'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Tent Spikes'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'stakes',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+  app.get('/axe', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'axe'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Axe'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'axe',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+  app.get('/sleepingbag', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'sleepingbag'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='SLEEPING BAGS'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'sleepingbag',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+  app.get('/sleepingbag', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'sleepingbag'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='SLEEPING BAGS'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'sleepingbag',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+  app.get('/pillow', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'pillow'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Pillow'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'pillow',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+  app.get('/pillow', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'pillow'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Pillow'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'pillow',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+  app.get('/airmattress', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'airmattress'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Air Mattress'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'airmattress',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+  app.get('/airpump', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'airpump'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Air Pumps'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'airpump',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+  app.get('/sleepingcot', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'sleepingcot'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Cots'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'sleepingcot',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+  app.get('/watercontainer', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'watercontainer'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Water Bottles'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'watercontainer',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+  app.get('/cooler', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'cooler'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='COOLERS'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'cooler',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+  app.get('/thermos', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'thermos'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Vacuum Bottles'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'thermos',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+  app.get('/stove', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'stove'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Stoves'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'stove',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+  app.get('/propane', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'propane'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Propane Tank'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'propane',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+  app.get('/charcoal', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'charcoal'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Charcoal'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'charcoal',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+  app.get('/lighter', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'lighter'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Catergory='Hunting > Safety & Survival > Fire Starters & Lighters'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'lighter',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+  app.get('/cookingmisc', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'cookingmisc'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Cooking Accessories'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'cookingmisc',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
   
   app.get('/prevpage', (req, res) => {
       request({url: `${url}${req.query.uri}&Query=${req.query.Query}`, headers: headers}, function (error, response, body) {
           if (!error && response.statusCode == 200) {
               let newItems = JSON.parse(body)
-              
+
               res.json(newItems)
               console.log('Get Was Successful')
           }
