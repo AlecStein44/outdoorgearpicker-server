@@ -2013,7 +2013,7 @@ app.get('/shadetarp', (req, res) => {
       .where({type: 'axe'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Axe'&pageSize=500`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Axes/Machetes'&pageSize=500`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     let newItems = JSON.parse(body)
                     res.json(newItems)
