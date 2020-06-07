@@ -1975,6 +1975,37 @@ app.get('/boot', (req, res) => {
       })
   })
 
+app.get('/shadetarp', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'shadetarp'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Canopies'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'shadetarp',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
   app.get('/axe', (req, res) => {
     db
       .select('*')
