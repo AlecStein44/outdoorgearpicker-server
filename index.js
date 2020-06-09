@@ -2068,68 +2068,6 @@ app.get('/shadetarp', (req, res) => {
       })
   })
 
-  app.get('/sleepingbag', (req, res) => {
-    db
-      .select('*')
-      .from('types')
-      .where({type: 'sleepingbag'})
-      .then(typeData => {
-          if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='SLEEPING BAGS'&pageSize=500`, headers: headers}, function (error, response, body) {
-                if (!error && response.statusCode == 200) {
-                    let newItems = JSON.parse(body)
-                    res.json(newItems)
-                    console.log('Get Was Successful')
-                      db('types')
-                          .insert([{
-                              type: 'sleepingbag',
-                              data: JSON.stringify(newItems)
-                          }])
-                          .catch(error => {
-                              return res.json(error)
-                          })
-                  }
-              });
-                
-          } else {
-              res.json(typeData[0].data)
-              console.log(typeData[0].data)
-              console.log('Get From Database Was Successful')
-          }
-      })
-  })
-
-  app.get('/pillow', (req, res) => {
-    db
-      .select('*')
-      .from('types')
-      .where({type: 'pillow'})
-      .then(typeData => {
-          if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Pillow'&pageSize=500`, headers: headers}, function (error, response, body) {
-                if (!error && response.statusCode == 200) {
-                    let newItems = JSON.parse(body)
-                    res.json(newItems)
-                    console.log('Get Was Successful')
-                      db('types')
-                          .insert([{
-                              type: 'pillow',
-                              data: JSON.stringify(newItems)
-                          }])
-                          .catch(error => {
-                              return res.json(error)
-                          })
-                  }
-              });
-                
-          } else {
-              res.json(typeData[0].data)
-              console.log(typeData[0].data)
-              console.log('Get From Database Was Successful')
-          }
-      })
-  })
-
   app.get('/pillow', (req, res) => {
     db
       .select('*')
@@ -2168,7 +2106,7 @@ app.get('/shadetarp', (req, res) => {
       .where({type: 'airmattress'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Air Mattress'&pageSize=500`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Lables='Air Beds'&pageSize=500`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     let newItems = JSON.parse(body)
                     res.json(newItems)
@@ -2292,7 +2230,7 @@ app.get('/shadetarp', (req, res) => {
       .where({type: 'cooler'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='COOLERS'&pageSize=500`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Chest'&pageSize=500`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     let newItems = JSON.parse(body)
                     res.json(newItems)
@@ -2416,7 +2354,7 @@ app.get('/shadetarp', (req, res) => {
       .where({type: 'charcoal'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Charcoal'&pageSize=500`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Manufacturer='Cowboy Charcoal'&pageSize=500`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     let newItems = JSON.parse(body)
                     res.json(newItems)
@@ -2447,7 +2385,7 @@ app.get('/shadetarp', (req, res) => {
       .where({type: 'lighter'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Catergory='Hunting > Safety & Survival > Fire Starters & Lighters'&pageSize=500`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Catergory='Hunting  >  Safety & Survival  >  Fire Starters & Lighters'&pageSize=500`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     let newItems = JSON.parse(body)
                     res.json(newItems)
@@ -2486,6 +2424,37 @@ app.get('/shadetarp', (req, res) => {
                       db('types')
                           .insert([{
                               type: 'cookingmisc',
+                              data: JSON.stringify(newItems)
+                          }])
+                          .catch(error => {
+                              return res.json(error)
+                          })
+                  }
+              });
+                
+          } else {
+              res.json(typeData[0].data)
+              console.log(typeData[0].data)
+              console.log('Get From Database Was Successful')
+          }
+      })
+  })
+
+app.get('/lantern', (req, res) => {
+    db
+      .select('*')
+      .from('types')
+      .where({type: 'lantern'})
+      .then(typeData => {
+          if (typeData.length === 0) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Spotlights & Lanterns'&pageSize=500`, headers: headers}, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    let newItems = JSON.parse(body)
+                    res.json(newItems)
+                    console.log('Get Was Successful')
+                      db('types')
+                          .insert([{
+                              type: 'lantern',
                               data: JSON.stringify(newItems)
                           }])
                           .catch(error => {
