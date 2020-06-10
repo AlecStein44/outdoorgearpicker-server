@@ -1889,7 +1889,7 @@ app.get('/boot', (req, res) => {
       .where({type: 'tent'})
       .then(typeData => {
           if (typeData.length === 0) {
-              request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='TENTS'`, headers: headers}, function (error, response, body) {
+              request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Dome'&'Wall'&'Truck'&'Backpack'&'Family'`, headers: headers}, function (error, response, body) {
                   if (!error && response.statusCode == 200) {
                       
                       let newItems = JSON.parse(body)
