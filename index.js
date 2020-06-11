@@ -2502,7 +2502,7 @@ app.get('/search', (req, res) => {
             console.log('Get Was Successful')
         }
     });
-    console.log(`${url}&Query=Name~'${req.query.keyword}'`)
+    console.log(`${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'${req.query.keyword}'`)
 })
 
 app.get('/test', (req, res) => {
