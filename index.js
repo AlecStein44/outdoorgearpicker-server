@@ -2494,7 +2494,7 @@ app.get('/lantern', (req, res) => {
   })
 
 app.get('/search', (req, res) => {
-    request({url: `${url}&Query=Name~'${req.query.keyword}'`, headers: headers}, function (error, response, body) {
+    request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'${req.query.keyword}'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let newItems = JSON.parse(body)
             
