@@ -2502,6 +2502,7 @@ app.get('/search', (req, res) => {
             console.log('Get Was Successful')
         }
     });
+    console.log(req.query)
 })
 
 app.get('/test', (req, res) => {
