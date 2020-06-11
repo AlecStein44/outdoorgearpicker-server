@@ -2493,6 +2493,17 @@ app.get('/lantern', (req, res) => {
       });
   })
 
+app.get('/search', (req, res) => {
+    request({url: `${url}&Query=Name~'${req.query.keyword}'`, headers: headers}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let newItems = JSON.parse(body)
+            
+            res.json(newItems)
+            console.log('Get Was Successful')
+        }
+    });
+})
+
 app.get('/test', (req, res) => {
     /*request({url: `${url}/Catalogs/ItemSearch?Query=Category='GUNS'`, headers: headers}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
