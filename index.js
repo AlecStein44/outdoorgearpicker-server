@@ -2502,7 +2502,7 @@ app.get('/search', (req, res) => {
             console.log('Get Was Successful')
         }
     });
-    console.log(req.query)
+    console.log(`${url}&Query=Name~'${req.query.keyword}'`)
 })
 
 app.get('/test', (req, res) => {
